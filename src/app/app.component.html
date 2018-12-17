@@ -1,2 +1,3 @@
 <h1 class="heading">{{title}}</h1>
-<app-book-list></app-book-list>
+<button (click)="showBookList=!showBookList">toggle</button>
+<app-book-list *ngIf="showBookList"></app-book-list>
