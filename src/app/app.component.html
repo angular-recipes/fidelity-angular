@@ -1,3 +1,6 @@
 <h1 class="heading">{{title}}</h1>
-<button (click)="showBookList=!showBookList">toggle</button>
-<app-book-list *ngIf="showBookList"></app-book-list>
+
+<a routerLink="/home" routerLinkActive="current">Home</a> |
+<a routerLink="/about" routerLinkActive="current">About</a> |
+<hr/>
+<router-outlet></router-outlet>

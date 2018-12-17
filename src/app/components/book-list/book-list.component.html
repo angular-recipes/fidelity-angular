@@ -3,7 +3,7 @@
   [class.high]="book.rating > 3"
 >
   <!-- <div *ngIf="book.rating > 1"> -->
-    <div class="title">{{book.title}}</div>
+    <a class="title" routerLink="/book/{{i+1}}">{{book.title}}</a>
     <div class="author">{{book.author}}</div>
     <div>{{book.price}}</div>
     <div>{{book.rating}}</div>

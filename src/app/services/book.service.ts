@@ -47,4 +47,8 @@ export class BookService {
     if (book.rating > 1)
       book.rating--;
   }
+
+  getBook(id: number) {
+    return this.books[id - 1];
+  }
 }

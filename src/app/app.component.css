@@ -1,3 +1,6 @@
 .heading {
     color: brown;
 }
+.current {
+    color: red;
+}
