@@ -1,3 +1,4 @@
+import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-
-  constructor() { }
+  book: Book;
+  constructor() {
+  }
 
   ngOnInit() {
+    this.book = new Book(
+      'The Alchemist',
+      'Paulo Cohelo',
+      33,
+      4);
   }
 
 }
