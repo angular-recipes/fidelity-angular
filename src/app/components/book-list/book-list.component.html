@@ -1,6 +1,12 @@
-<div>
-  <div class="title">{{book.title}}</div>
-  <div class="author">{{book.author}}</div>
-  <div>{{book.price}}</div>
-  <div>{{book.rating}}</div>
+<div 
+  *ngFor="let book of books" 
+  [class.high]="book.rating > 3"
+>
+  <!-- <div *ngIf="book.rating > 1"> -->
+    <div class="title">{{book.title}}</div>
+    <div class="author">{{book.author}}</div>
+    <div>{{book.price}}</div>
+    <div>{{book.rating}}</div>
+    <hr />
+  <!-- </div> -->
 </div>
