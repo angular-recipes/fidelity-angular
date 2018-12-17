@@ -38,4 +38,14 @@ export class BookListComponent implements OnInit {
       )];
   }
 
+  rateUp(book: Book) {
+    if(book.rating < 5)
+      book.rating++;
+  }
+
+  rateDown(book: Book) {
+    if(book.rating > 1)
+      book.rating--;
+  }
+
 }
