@@ -1,3 +1,4 @@
+import { Http } from '@angular/http';
 import { Book } from './../../models/book';
 import { BookService } from './../../services/book.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,12 +14,14 @@ export class BookDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private bookService: BookService
+    private bookService: BookService,
+    private http: Http
   ) { }
 
   ngOnInit() {
     let id = +this.route.snapshot.paramMap.get('id');
-    this.book = this.bookService.getBook(id);
+    this.bookService.getBook(id)
+      .subscribe(res => this.book = res.json());
   }
 
   goToHome() {

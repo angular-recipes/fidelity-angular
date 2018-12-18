@@ -1,6 +1,7 @@
 import { BookService } from './../../services/book.service';
 import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-book-list',
@@ -11,11 +12,16 @@ export class BookListComponent implements OnInit {
   books: Book[];
   today = new Date();
 
-  constructor(private bookService: BookService) {
+  constructor(
+    private bookService: BookService,
+    private http: Http
+  ) {
   }
 
   ngOnInit() {
-    this.books = this.bookService.getBooks();
+    this.bookService
+      .getBooks()
+      .subscribe((res) => this.books = res.json());
   }
 
   rateUp(book: Book) {

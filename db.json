@@ -1,0 +1,18 @@
+{
+    "books" : [
+        {
+            "id": 1,
+            "title": "The Alchemist",
+            "author": "Paulo Cohelo",
+            "price": 33,
+            "rating": 4
+        },
+        {
+            "id": 2,
+            "title": "Five point someone",
+            "author": "Chetan Bhagat",
+            "price": 12,
+            "rating": 2
+        }
+    ]
+}
