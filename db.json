@@ -1,18 +1,25 @@
 {
-    "books" : [
-        {
-            "id": 1,
-            "title": "The Alchemist",
-            "author": "Paulo Cohelo",
-            "price": 33,
-            "rating": 4
-        },
-        {
-            "id": 2,
-            "title": "Five point someone",
-            "author": "Chetan Bhagat",
-            "price": 12,
-            "rating": 2
-        }
-    ]
+  "books": [
+    {
+      "id": 1,
+      "title": "The Alchemist",
+      "author": "Paulo Cohelo",
+      "price": 33,
+      "rating": 3
+    },
+    {
+      "id": 2,
+      "title": "Five point someone",
+      "author": "Chetan Bhagat",
+      "price": 12,
+      "rating": 4
+    },
+    {
+      "title": "White Tiger",
+      "author": "Arvind Adiga",
+      "price": 34,
+      "rating": 5,
+      "id": 3
+    }
+  ]
 }

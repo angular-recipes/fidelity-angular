@@ -25,11 +25,11 @@ export class BookListComponent implements OnInit {
   }
 
   rateUp(book: Book) {
-    this.bookService.rateUp(book);
+    this.bookService.rateUp(book).subscribe();
   }
 
   rateDown(book: Book) {
-    this.bookService.rateDown(book);
+    this.bookService.rateDown(book).subscribe();
   }
 
 }

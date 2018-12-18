@@ -6,34 +6,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BookService {
-  private books: Book[];
   private url = 'http://localhost:3000/books/';
 
   constructor(private http: Http) {
-    this.books = [
-      new Book(
-        'The Alchemist',
-        'Paulo Cohelo',
-        33,
-        3),
-      new Book(
-        '5 point someone',
-        'Chetan Bhagat',
-        12,
-        2
-      ),
-      new Book(
-        '4 hour work week',
-        'Tim Ferris',
-        43,
-        5
-      ),
-      new Book(
-        'Power of Now',
-        'Eckhart Tolle',
-        54,
-        4
-      )];
   }
 
   getBooks() {
@@ -43,11 +18,13 @@ export class BookService {
   rateUp(book: Book) {
     if (book.rating < 5)
       book.rating++;
+    return this.http.put(this.url + book.id, book);
   }
 
   rateDown(book: Book) {
     if (book.rating > 1)
       book.rating--;
+    return this.http.put(this.url + book.id, book);
   }
 
   getBook(id: number) {
@@ -55,6 +32,6 @@ export class BookService {
   }
 
   saveBook(book: Book) {
-    this.books.push(book);
+    return this.http.post(this.url, book);
   }
 }

@@ -1,4 +1,6 @@
-<h2>{{book?.title}}</h2>
-<i>{{book?.author}}</i>
+<div *ngIf="book">
+    <h2>{{book.title}}</h2>
+    <i>{{book.author}}</i>
+</div>
 <br/>
 <button (click)="goToHome()">Go back</button>
