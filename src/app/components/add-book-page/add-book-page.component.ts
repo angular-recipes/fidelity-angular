@@ -20,6 +20,8 @@ export class AddBookPageComponent implements OnInit {
   }
 
   saveBook() {
+    this.newBook.price = +this.newBook.price;
+    this.newBook.rating = +this.newBook.rating;
     this.bookService.saveBook(this.newBook);
     this.router.navigate(['/home']);
   }

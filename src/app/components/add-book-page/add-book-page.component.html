@@ -1,23 +1,43 @@
+<form #addBookForm="ngForm">
+  <div>Title:</div>
+  <input name="title" type="text" [(ngModel)]="newBook.title" #title="ngModel" required minlength="4">
+  <div *ngIf="title.invalid && (title.touched || title.dirty)">
+    <div *ngIf="title.errors.required" class="error">
+      Title is required
+    </div>
+    <div *ngIf="title.errors.minlength" class="error">
+      Minumum 4 characters
+    </div>
+  </div>
 
-<div>Title:</div>
-<input type="text" [(ngModel)]="newBook.title">
+  <div>Author:</div>
+  <input name="author" type="text" [(ngModel)]="newBook.author" #author="ngModel" required>
+  <div *ngIf="author.invalid">
+      <div *ngIf="author.errors.required && (author.touched || author.dirty)" class="error">
+        Author is required
+      </div>
+    </div>
 
-<div>Author:</div>
-<input type="text" [(ngModel)]="newBook.author">
+  <div>Price:</div>
+  <input name="price" type="text" [(ngModel)]="newBook.price">
 
-<div>Price:</div>
-<input type="text" [(ngModel)]="newBook.price">
+  <div>Rating:</div>
+  <select name="rating" [(ngModel)]="newBook.rating">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
 
-<div>Rating:</div>
-<select [(ngModel)]="newBook.rating">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
-
-<div>
-  <button (click)="saveBook()">Save</button>
-</div>
+  <div>
+    <button [disabled]="addBookForm.invalid" (click)="saveBook()">Save</button>
+  </div>
+</form>
+{{ addBookForm.valid }}
+<br>
+{{title.valid}}
+<br>
+{{title.errors | json}}
+<br>
 {{newBook | json}}
