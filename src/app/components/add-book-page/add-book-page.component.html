@@ -12,8 +12,8 @@
 
   <div>Author:</div>
   <input name="author" type="text" [(ngModel)]="newBook.author" #author="ngModel" required>
-  <div *ngIf="author.invalid">
-      <div *ngIf="author.errors.required && (author.touched || author.dirty)" class="error">
+  <div *ngIf="author.invalid && (author.touched || author.dirty)">
+      <div *ngIf="author.errors.required" class="error">
         Author is required
       </div>
     </div>

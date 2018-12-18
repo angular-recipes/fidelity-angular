@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
   books: Book[];
+  today = new Date();
 
   constructor(private bookService: BookService) {
   }
