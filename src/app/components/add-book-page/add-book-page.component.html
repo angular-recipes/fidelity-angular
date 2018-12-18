@@ -1,0 +1,23 @@
+
+<div>Title:</div>
+<input type="text" [(ngModel)]="newBook.title">
+
+<div>Author:</div>
+<input type="text" [(ngModel)]="newBook.author">
+
+<div>Price:</div>
+<input type="text" [(ngModel)]="newBook.price">
+
+<div>Rating:</div>
+<select [(ngModel)]="newBook.rating">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+
+<div>
+  <button (click)="saveBook()">Save</button>
+</div>
+{{newBook | json}}
