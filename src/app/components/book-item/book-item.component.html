@@ -1,6 +1,7 @@
+
 <div [class.high]="book.rating>3">
-  <a class="title" routerLink="/book/{{i+1}}">{{book.title | lowercase}}</a>
-  <div class="author">{{book.author | surname}}</div>
+  <a class="title" routerLink="/book/{{book.id}}">{{book.title | lowercase}}</a>
+  <div class="author" appHighlight="blue">{{book.author | surname}}</div>
   <div>{{book.price | currency:'EUR':true:'3.1-3'}}</div>
   <div>{{book.rating | number:'1.2-2'}}</div>
   <button (click)="handleRateUpBtnClick()">+</button>

@@ -11,6 +11,7 @@ import { Http } from '@angular/http';
 export class BookListComponent implements OnInit {
   books: Book[];
   today = new Date();
+  color = 'pink';
 
   constructor(
     private bookService: BookService,

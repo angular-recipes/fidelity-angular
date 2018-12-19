@@ -10,6 +10,7 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
 import { AddBookPageComponent } from './components/add-book-page/add-book-page.component';
 import { SurnamePipe } from './pipes/surname.pipe';
 import { BookItemComponent } from './components/book-item/book-item.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BookItemComponent } from './components/book-item/book-item.component';
     BookDetailsComponent,
     AddBookPageComponent,
     SurnamePipe,
-    BookItemComponent
+    BookItemComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -12,9 +12,12 @@ export class BookItemComponent implements OnInit {
   @Output() rateUpBtnClick = new EventEmitter();
   @Output() rateDownBtnClick = new EventEmitter();
 
-  constructor() { }
+  constructor() { 
+    console.log('cons', this.book);
+  }
 
   ngOnInit() {
+    console.log('on init', this.book);
   }
 
   handleRateUpBtnClick() {

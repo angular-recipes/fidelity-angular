@@ -6,3 +6,7 @@
   (rateDownBtnClick)="rateDown($event)"
 >
 </app-book-item>
+
+<p [appHighlight]="color">Highlighted in yellow</p>
+<button (click)="color='red'">Red</button>
+<button (click)="color='green'">Green</button>
