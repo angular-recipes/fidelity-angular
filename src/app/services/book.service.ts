@@ -1,18 +1,33 @@
+import { environment } from './../../environments/environment';
 import { Http } from '@angular/http';
 import { Book } from './../models/book';
 import { Injectable } from '@angular/core';
+import { pipe, of } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  private url = 'http://localhost:3000/books/';
+  private url = environment.apiUrl;
+  private books: Book[];
 
   constructor(private http: Http) {
   }
 
   getBooks() {
-    return this.http.get(this.url);
+    if(this.books && this.books.length) {
+      return of(this.books);
+    }
+
+    return this.http
+      .get(this.url)
+      .pipe(
+        map(res => res.json()),
+        tap(res => this.books = res)
+      )
+      ;
   }
 
   rateUp(book: Book) {
@@ -32,6 +47,15 @@ export class BookService {
   }
 
   saveBook(book: Book) {
-    return this.http.post(this.url, book);
+    return this.http
+      .post(this.url, book)
+      .pipe(
+        tap(res => this.books = null)
+      )
+      ;
+  }
+
+  updateBook(book: Book) {
+    return this.http.put(this.url + book.id, book);
   }
 }

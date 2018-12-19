@@ -1,6 +1,15 @@
 <div *ngIf="book">
     <h2>{{book.title}}</h2>
     <i>{{book.author}}</i>
+    <br/>
+    <button (click)="goToHome()">Go back</button>
+    <button (click)="showEditForm=true">Edit</button>
+    <app-book-form
+        *ngIf="showEditForm"
+        [book]="book"
+        (formSave)="saveBook($event)"
+    >
+    </app-book-form>
+
 </div>
-<br/>
-<button (click)="goToHome()">Go back</button>
+

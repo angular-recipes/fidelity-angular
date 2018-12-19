@@ -13,6 +13,7 @@ export class BookListComponent implements OnInit {
   today = new Date();
   color = 'pink';
 
+
   constructor(
     private bookService: BookService,
     private http: Http
@@ -20,9 +21,10 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.warn('Books loaded'); 
     this.bookService
       .getBooks()
-      .subscribe((res) => this.books = res.json());
+      .subscribe((res) => this.books = res);
   }
 
   rateUp(book: Book) {

@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BookDetailsComponent implements OnInit {
   book: Book;
+  showEditForm = false;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -26,6 +28,14 @@ export class BookDetailsComponent implements OnInit {
 
   goToHome() {
     this.router.navigate(['/home']);
+  }
+
+  saveBook(book: Book) {
+    book.price = +book.price;
+    book.rating = +book.rating;
+    this.bookService
+      .updateBook(book)
+      .subscribe(res => this.router.navigate(['/home']));
   }
 
 }

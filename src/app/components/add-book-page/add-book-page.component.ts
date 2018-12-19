@@ -19,11 +19,11 @@ export class AddBookPageComponent implements OnInit {
     this.newBook = new Book(null, null, null, null);
   }
 
-  saveBook() {
-    this.newBook.price = +this.newBook.price;
-    this.newBook.rating = +this.newBook.rating;
+  saveBook(book: Book) {
+    book.price = +book.price;
+    book.rating = +book.rating;
     this.bookService
-      .saveBook(this.newBook)
+      .saveBook(book)
       .subscribe(res => this.router.navigate(['/home']));
   }
 

@@ -2,7 +2,7 @@
   "books": [
     {
       "id": 1,
-      "title": "The Alchemist",
+      "title": "The Alchemist Rules",
       "author": "Paulo Cohelo",
       "price": 33,
       "rating": 2
@@ -12,7 +12,7 @@
       "title": "Five point someone",
       "author": "Chetan Bhagat",
       "price": 12,
-      "rating": 4
+      "rating": 5
     },
     {
       "title": "White Tiger",
@@ -20,6 +20,50 @@
       "price": 34,
       "rating": 5,
       "id": 3
+    },
+    {
+      "title": "Power of now",
+      "author": "Eckhart Tolle",
+      "price": 23,
+      "rating": 3,
+      "id": 4
+    },
+    {
+      "title": "Hello",
+      "author": "lkjlkj",
+      "price": 23,
+      "rating": 4,
+      "id": 5
+    },
+    {
+      "title": "New Book",
+      "author": "iuiu",
+      "price": 98,
+      "rating": 3,
+      "id": 6
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "label": "Whats your name?"
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "label": "Whats your age?"
+    },
+    {
+      "id": 3,
+      "type": "dropdown",
+      "label": "Where do you live?",
+      "options": [
+        "Delhi",
+        "Mumbai",
+        "Banglore",
+        "Chennai"
+      ]
     }
   ]
 }
