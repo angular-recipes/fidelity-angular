@@ -9,6 +9,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AddBookPageComponent } from './components/add-book-page/add-book-page.component';
 import { SurnamePipe } from './pipes/surname.pipe';
+import { BookItemComponent } from './components/book-item/book-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SurnamePipe } from './pipes/surname.pipe';
     AboutPageComponent,
     BookDetailsComponent,
     AddBookPageComponent,
-    SurnamePipe
+    SurnamePipe,
+    BookItemComponent
   ],
   imports: [
     BrowserModule,

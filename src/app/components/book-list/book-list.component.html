@@ -1,15 +1,8 @@
 {{today | date:'medium'}}
-<div 
-  *ngFor="let book of books;let i = index" 
-  [class.high]="book.rating > 3"
+<app-book-item 
+  *ngFor="let book of books" 
+  [book]="book"
+  (rateUpBtnClick)="rateUp($event)"
+  (rateDownBtnClick)="rateDown($event)"
 >
-  <!-- <div *ngIf="book.rating > 1"> -->
-    <a class="title" routerLink="/book/{{i+1}}">{{book.title | lowercase}}</a>
-    <div class="author">{{book.author | surname}}</div>
-    <div>{{book.price | currency:'EUR':true:'3.1-3'}}</div>
-    <div>{{book.rating | number:'1.2-2'}}</div>
-    <button (click)="rateUp(book)">+</button>
-    <button (click)="rateDown(book)">-</button>
-    <hr />
-  <!-- </div> -->
-</div>
+</app-book-item>
